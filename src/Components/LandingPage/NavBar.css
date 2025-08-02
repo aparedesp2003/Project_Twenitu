@@ -1,60 +1,33 @@
-/* src/Components/LandingPage/NavBar.css */
-
 .navbar {
-    width: 90%;
-    margin: 20px auto;
-    padding: 16px 32px;
-    background-color: #FFFCF5; /* Off White */
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* optional subtle shadow */
-    position: relative;
-    z-index: 100;
-    font-family: 'Helvetica Neue', sans-serif;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #000000; /* Black */
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 40px;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: #000000; /* Black */
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .navbar-links a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #9d9759; /* Olive green */
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-  
-  .navbar-links a:hover {
-    color: #9d9759;
-  }
-  
-  .navbar-links a:hover::after {
-    width: 100%;
-  }
-  
+  background-color: #1e1e2f;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00dfc0;
+}
+
+.navbar-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00dfc0;
+}

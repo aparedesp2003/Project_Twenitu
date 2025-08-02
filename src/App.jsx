@@ -1,21 +1,23 @@
 import './App.css';
-import LoginSignUp from './Components/LoginSignUp/LoginSignUp';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/LandingPage/NavBar';
-import BannerSection from './Components/LandingPage/BannerSection';
+import NavBar from './Components/LandingPage/NavBar.jsx';
+import BannerSection from './Components/LandingPage/BannerSection.jsx';
+import AboutSection from './Components/LandingPage/AboutSection.jsx';
+import Footer from './Components/LandingPage/Footer.jsx';
+// import LoginSignUp from './Components/LoginSignUp/LoginSignUp';
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
+      <NavBar />
       <BannerSection />
-      {/* Later, add About, Services, etc. */}
-    </div>
+      <AboutSection />
+      <Footer />
 
-    // If you want to render the login page instead of landing page, just switch these:
-    // <div className="app-wrapper">
-    //   <LoginSignUp />
-    // </div>
+      {/* If you ever want to render the login page instead of the landing page: */}
+      {/* <div className="app-wrapper">
+        <LoginSignUp />
+      </div> */}
+    </div>
   );
 }
 

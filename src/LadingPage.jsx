@@ -1,15 +1,16 @@
-// App.jsx
+// src/App.jsx
 import React from 'react';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import './App.css'; // global styles if any
+import NavBar from 'project-Twenitu/src/Components/LandingPage/NavBar.jsx';
+import BannerSection from 'project-Twenitu/src/Components/LandingPage/BannerSection.jsx';
+import Footer from 'project-Twenitu/src/Components/LandingPage/Footer.jsx';
+import './App.css';
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      <Banner />
-      {/* Add other components below as needed */}
+      <NavBar />
+      <BannerSection />
+      <Footer />
     </div>
   );
 }
