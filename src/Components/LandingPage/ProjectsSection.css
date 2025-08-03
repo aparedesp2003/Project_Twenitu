@@ -1,0 +1,60 @@
+.projects-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projects-intro {
+    max-width: 800px;
+    margin: 1rem auto 2rem;
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.2s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-image {
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Temporary placeholder images (replace with real ones later) */
+  .project1 {
+    background-image: url('https://source.unsplash.com/featured/?interior,loft');
+  }
+  
+  .project2 {
+    background-image: url('https://source.unsplash.com/featured/?office,workspace');
+  }
+  
+  .project3 {
+    background-image: url('https://source.unsplash.com/featured/?home,renovation');
+  }
+  
