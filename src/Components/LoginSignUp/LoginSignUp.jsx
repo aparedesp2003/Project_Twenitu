@@ -11,26 +11,11 @@ const LoginSignUp = () => {
   const [password, setPassword] = useState("");
 
   const rules = [
-    {
-      label: "At least 8 characters",
-      test: (pwd) => pwd.length >= 8,
-    },
-    {
-      label: "At least one uppercase letter",
-      test: (pwd) => /[A-Z]/.test(pwd),
-    },
-    {
-      label: "At least one lowercase letter",
-      test: (pwd) => /[a-z]/.test(pwd),
-    },
-    {
-      label: "At least one number",
-      test: (pwd) => /[0-9]/.test(pwd),
-    },
-    {
-      label: "At least one special character (!@#$...)",
-      test: (pwd) => /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(pwd),
-    },
+    { label: "At least 8 characters", test: (pwd) => pwd.length >= 8 },
+    { label: "At least one uppercase letter", test: (pwd) => /[A-Z]/.test(pwd) },
+    { label: "At least one lowercase letter", test: (pwd) => /[a-z]/.test(pwd) },
+    { label: "At least one number", test: (pwd) => /[0-9]/.test(pwd) },
+    { label: "At least one special character (!@#$...)", test: (pwd) => /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(pwd) },
   ];
 
   const isPasswordValid = rules.every((rule) => rule.test(password));
@@ -45,10 +30,8 @@ const LoginSignUp = () => {
   return (
     <div className="container">
       {showSuccess && (
-        <div className="popup">
-          {action === "Login"
-            ? "Login Successful!"
-            : "Account Created Successfully!"}
+        <div className="popup" aria-live="polite">
+          {action === "Login" ? "Login Successful!" : "Account Created Successfully!"}
         </div>
       )}
 
@@ -95,10 +78,7 @@ const LoginSignUp = () => {
           {rules.map((rule, index) => {
             const passed = rule.test(password);
             return (
-              <div
-                key={index}
-                className={`rule ${passed ? "valid" : "invalid"}`}
-              >
+              <div key={index} className={`rule ${passed ? "valid" : "invalid"}`}>
                 {passed ? "✅" : "❌"} {rule.label}
               </div>
             );

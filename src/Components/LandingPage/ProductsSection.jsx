@@ -11,16 +11,31 @@ const ProductsSection = () => {
         </p>
         <div className="products-grid">
           <div className="product-card">
-            <h3>Smart Design Suite</h3>
-            <p>All-in-one digital toolkit for space visualization, including 3D renderings, layout simulations, and material previews.</p>
+            <h3> Twin | Scan </h3>
+            <p>
+              Capture real-world spaces with precision. Using advanced scanning 
+              and photogrammetry, Twin | Scan generates accurate digital 
+              twins—perfect for site analysis, renovation planning, and 
+              seamless collaboration between stakeholders.
+            </p>
           </div>
           <div className="product-card">
-            <h3>Modular Build Kits</h3>
-            <p>Customizable construction modules tailored for fast, efficient, and sustainable building solutions.</p>
+            <h3> Twin | Model </h3>
+            <p>
+              Transform ideas into intelligent 3D models. Twin | Model enables 
+              customizable layouts, structural simulations, and sustainable 
+              design solutions, making it easier to visualize and optimize 
+              projects before construction even begins.
+            </p>
           </div>
           <div className="product-card">
-            <h3>Interactive Client Portal</h3>
-            <p>A streamlined platform for tracking project progress, accessing blueprints, and direct communication with our team.</p>
+            <h3> Twin | Show </h3>
+            <p>
+              Bring projects to life with immersive presentations. Twin | Show 
+              combines interactive walkthroughs, blueprint integration, and 
+              real-time updates—ensuring clients and teams stay aligned at 
+              every stage of development.
+            </p>
           </div>
         </div>
       </div>
