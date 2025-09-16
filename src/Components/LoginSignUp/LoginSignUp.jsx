@@ -5,7 +5,7 @@ import email_icon from "../Images/email_icon.png";
 import password_icon from "../Images/password_icon.png";
 import telephone_icon from "../Images/telephone_icon.png";
 
-const LoginSignUp = () => {
+const LoginSignUp = ({ onSuccess }) => {   // Accept onSuccess as prop
   const [action, setAction] = useState("Sign Up");
   const [showSuccess, setShowSuccess] = useState(false);
   const [password, setPassword] = useState("");
@@ -24,6 +24,11 @@ const LoginSignUp = () => {
     if (isPasswordValid) {
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3000);
+      
+      // NEW: notify App.jsx about login success
+    if (typeof onSuccess === "function") {
+      onSuccess();
+      }
     }
   };
 
