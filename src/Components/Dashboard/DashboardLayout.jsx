@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
+import "./Dashboard.css";
 
 // Sections
 import DashboardHome from "./DashboardHome";
@@ -19,20 +20,18 @@ const DashboardLayout = ({ onSignOut }) => {
       case "messages":
         return <MessagesSection />;
       default:
-        return <DashboardHome />;
+        return <DashboardHome setActiveSection={setActiveSection} />;
     }
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className="dashboard-container">
       <Sidebar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         onSignOut={onSignOut}
       />
-      <main style={{ flex: 1, padding: "20px", background: "#f9fafb" }}>
-        {renderSection()}
-      </main>
+      <main className="dashboard-main">{renderSection()}</main>
     </div>
   );
 };
