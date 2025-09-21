@@ -143,7 +143,7 @@ html, body {
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
-  user-select: none;
+  /* user-select: none; */
   transition: background 0.3s ease, transform 0.12s ease, box-shadow 0.2s ease;
 }
 
