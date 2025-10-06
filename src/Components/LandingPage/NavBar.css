@@ -21,10 +21,10 @@
 }
 
 .logo-img {
-  width: 150px;
-  height: 45px;
+  width: 175px;
+  height: 50px;
   object-fit: contain;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .company-name {

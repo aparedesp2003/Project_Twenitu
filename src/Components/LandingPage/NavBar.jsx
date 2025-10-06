@@ -13,7 +13,7 @@ const NavBar = ({ onLogin, onSignUp }) => {
       {/* Left: Logo + brand */}
       <div className="navbar-logo" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
         <img src={logo} alt="Twenitu Logo" className="logo-img" />
-        <span className="company-name">Twenitu</span>
+        {/* <span className="company-name">Twenitu</span> */}
       </div>
 
       {/* Center: Navigation links */}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './AboutSection.css';
-import ConstructionImage from '../Images/Construction-begins.jpg';
-import EngineerImage from '../Images/Engineer-Computer-02.png';
-import TeamMember1 from '../Images/Worker-Table.png';
-import TeamMember2 from '../Images/Worker-Walls.jpg';
-import TeamMember3 from '../Images/Worker-Roof.jpg';
+// import ConstructionImage from '../Images/Construction-begins.jpg';
+import WorkersWalking from '../Images/Workers-before-construction.png';
+import TeamMember1 from '../Images/Gabriel Paredes.png';
+import TeamMember2 from '../Images/Andres Paredes.png';
+import TeamMember3 from '../Images/Gabria Brenner.png';
 
 const AboutSection = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -44,38 +44,40 @@ const AboutSection = () => {
 
   return (
     <section className="about-section" id="about">
-      {/* About content */}
-      <div className="about-wrapper">
-        <div className="about-side left-side">
-          <img src={EngineerImage} alt="Left Visual" className="about-image" />
-        </div>
 
+      {/* === About content (updated) === */}
+      <div className="about-wrapper about-two-col">
+        {/* Left: single rounded image */}
+        <figure className="about-media">
+          <img src={WorkersWalking} alt="Twenitú team at work" />
+        </figure>
+
+        {/* Right: text */}
         <div className="about-container">
-          <h2>About Twenitu</h2>
-          <p>
-            Twenitú is a company focused on reimagining and reengineering spaces. With two integrated divisions —
-            Twenitú Digital and Twenitú Build — we offer solutions that blend technical precision, intelligent design,
-            and advanced technology to transform spaces into energetic and functional environments.
+          <h2 className="about-title">Meet Twenitú</h2>
+          <p className="about-lead">
+            Learn how we integrate our two divisions to help the construction industry improve their workflow.
           </p>
-          <p>
-            We exist to unlock the hidden potential in every space. Inspired by our heritage and roots, we help people,
-            families, and investors see beyond walls, plans, and details — to see what their spaces can truly become.
-          </p>
-          <p>
-            We reimagine. We breathe life and energy into space using precise data, realistic visualizations, and flawless,
-            caring execution.
-          </p>
-          <p>
-            We build meaning.
-          </p>
-        </div>
 
-        <div className="about-side right-side">
-          <img src={ConstructionImage} alt="Right Visual" className="about-image" />
+          <div className="about-body">
+            <p>
+              Twenitú is a company focused on reimagining and reengineering spaces. With two integrated divisions —
+              Twenitú Digital and Twenitú Build — we offer solutions that blend technical precision, intelligent design,
+              and advanced technology to transform spaces into energetic and functional environments.
+            </p>
+            <p>
+              We exist to unlock the hidden potential in every space. Inspired by our heritage and roots, we help people,
+              families, and investors see beyond walls, plans, and details — to see what their spaces can truly become.
+            </p>
+            <p>
+              We reimagine. We breathe life and energy into space using precise data, realistic visualizations, and
+              flawless, caring execution. We build meaning.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Team subsection */}
+      {/* === Team subsection (unchanged) === */}
       <div className="team-subsection">
         <h2>Our Team</h2>
         <div className="team-container">
@@ -83,7 +85,7 @@ const AboutSection = () => {
             <div
               key={index}
               className="team-card"
-              onClick={() => setSelectedMember(member)} // Open panel on click
+              onClick={() => setSelectedMember(member)}
             >
               <img src={member.image} alt={member.name} className="team-image" />
               <div className="team-role">{member.role}</div>
@@ -93,11 +95,11 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Side Panel */}
+      {/* === Side Panel (unchanged) === */}
       {selectedMember && (
         <div
           className="side-panel-overlay"
-          onClick={() => setSelectedMember(null)} // Close panel when clicking overlay
+          onClick={() => setSelectedMember(null)}
         >
           <div className="side-panel" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setSelectedMember(null)}>
