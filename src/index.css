@@ -1,10 +1,148 @@
+@import "tailwindcss";
+
+/* ── Twenitú brand color tokens ─────────────────────────────────────────── */
+@theme {
+  --color-twenitu-olive:     #9d9759;
+  --color-twenitu-sage:      #A6BBAC;
+  --color-twenitu-orange:    #C3703D;
+  --color-twenitu-off-white: #FFFCF5;
+  --color-twenitu-black:     #0a0a0a;
+  --color-twenitu-navy:      #0a192f;
+
+  --font-mono-brand: 'Martian Mono', monospace;
+  --font-sans-brand: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Global base ─────────────────────────────────────────────────────────── */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  background-color: #FFFCF5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .app {
   display: flex;
   flex-direction: column;
+}
+
+/* ── Brand font utilities ────────────────────────────────────────────────── */
+.font-brand-mono {
+  font-family: 'Martian Mono', monospace;
+  font-variation-settings: "wdth" 75;
+}
+
+.font-brand-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Hero entrance animations ────────────────────────────────────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes heroBadge {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+.hero-badge    { animation: heroBadge  0.6s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+.hero-line-1   { animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s both; }
+.hero-line-2   { animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+.hero-line-3   { animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.75s both; }
+.hero-tagline  { animation: heroFadeIn 0.7s ease 1.0s both; }
+.hero-cta      { animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 1.15s both; }
+.hero-scroll   { animation: heroFadeIn 0.6s ease 1.5s both; }
+.scroll-bounce { animation: scrollBounce 2s ease-in-out 2s infinite; }
+
+/* ── Scroll-reveal base ──────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+              transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+              transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+              transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* clip-path image reveal */
+.reveal-clip {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal-clip.in-view {
+  clip-path: inset(0% 0 0 0);
+}
+
+/* ── Restore heading sizes reset by Tailwind Preflight ───────────────────── */
+h1 { font-size: 2em;    font-weight: bold; }
+h2 { font-size: 1.5em;  font-weight: bold; }
+h3 { font-size: 1.17em; font-weight: bold; }
+h4 { font-size: 1em;    font-weight: bold; }
+h5 { font-size: 0.83em; font-weight: bold; }
+h6 { font-size: 0.67em; font-weight: bold; }
+
+/* ── Hero video edge-fade mask ───────────────────────────────────────────── */
+/* Fades all four edges of the video to transparent so the rectangular
+   boundary against the section background disappears completely.           */
+.hero-video-mask {
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0%, black 20%, black 80%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right,  transparent 0%, black 20%, black 80%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* ── Grain texture overlay ───────────────────────────────────────────────── */
+.grain-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+@keyframes fadeInOut {
+  0%        { opacity: 0; transform: translate(-50%, -10px); }
+  10%, 90%  { opacity: 1; transform: translate(-50%, 0);     }
+  100%      { opacity: 0; transform: translate(-50%, -10px); }
 }

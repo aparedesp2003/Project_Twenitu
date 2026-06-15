@@ -1,12 +1,11 @@
-// ProgressBar.jsx
 import React, { useEffect, useState } from "react";
 import "./ProgressBar.css";
 
 const ProgressBar = () => {
-  const [scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState<number>(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const totalHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
@@ -16,8 +15,6 @@ const ProgressBar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Run once on mount
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
